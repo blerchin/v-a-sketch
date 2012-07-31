@@ -18,11 +18,13 @@ class PrismData {
   PrismData(String mod_name) {
     module_name = mod_name;
     refreshData();
+
   }
   
   void refreshData() {
-    String [] data = loadStrings("http://citydashboard.org/modules/" + module_name + ".php?city=london&format=csv");
-    
+    //String [] // using PrismData variable instead of making a new one. -BL
+    data = loadStrings("http://citydashboard.org/modules/" + module_name + ".php?city=london&format=csv");
+    println( "refresh in progress" );
     //calculate max width of csv file
     for (int i=0; i < data.length; i++) {
       String [] chars = split(data[i], ',');
@@ -49,6 +51,7 @@ class PrismData {
   float getDataFloat(int row, int column) {
     return float(getData(row, column));
   }
+ 
 
 }
 

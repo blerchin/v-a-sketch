@@ -3,8 +3,8 @@
 
 // consts
 
-int WIDTH_SCR = 1280;
-int HEIGHT_SCR = 800;
+int WIDTH_SCR = 1024;
+int HEIGHT_SCR = 720;
 
 int NUM_COLOURS = 6;
 
@@ -15,6 +15,7 @@ int NUM_COLOURS = 6;
 // Matt's department. This file will change.
 
 PrismModule _testModule;
+
   
 void setup() {
   size(WIDTH_SCR, HEIGHT_SCR, P2D);
@@ -25,7 +26,7 @@ void setup() {
   // framerate we be managed, splitting cycles between up to 10 PrismModules. 
   // Expect your modules framerate to be lower than normal
   
-  _testModule = new RadiationTide();
+  _testModule = new BufferSketch();
   _testModule.setMeUp();
 }
 
@@ -54,14 +55,10 @@ class PrismModule {
     palette = new PrismPalette();
   }
   
-  void setMeUp() { }
+  void setMeUp() {  }
   void refreshData() {}
   void updateMe() { }
-  void drawMe() { 
-      fill( palette.getColour(1) );
-      stroke( palette.getColour(2) );
-      ellipse( random(200), random(200), random(10,20), random(10,20));
-    }
+  void drawMe() {  }
   
 }
 
